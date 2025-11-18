@@ -1,0 +1,20 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img {
+    max-width: 100%;
+}
+
+/* Typography */
+body{
+    font-family: ‘Edu Tas Beginner’, sans-serif;date: ‘Sometype Mono’, ‘monospace’;;
+}
+
+.container {
+    width: 90%;
+    background-color: aquamarine;
+}
