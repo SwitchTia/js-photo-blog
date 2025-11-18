@@ -1,14 +1,4 @@
-/* Starting MOBILE XS FIRST */
-/************************************************
-    MOBILE S
-*************************************************/
-
-@media screen and (min-width: 600px) {
-     .col {
-        width: calc(100% / 2 - (10px * 1) / 2);
-    }
-    
-}
+/* Starting MOBILE S FIRST */
 
 
 /************************************************
@@ -16,11 +6,10 @@
 *************************************************/
 
 @media screen and (min-width: 700px) {
-
-    .col {
-        width: calc(100% / 4 - (10px * 3) / 4);
+     .col {
+        width: calc(100% / 2 - (10px * 1) / 2);
     }
-
+    
 }
 
 
@@ -30,6 +19,6 @@
 @media screen and (min-width: 1100px) {
 
     .col {
-        width: calc(100% / 6 - (10px * 5) / 6);
+        width: calc(100% / 3 - (10px * 2) / 3);
     }
 }
