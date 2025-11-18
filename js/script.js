@@ -2,24 +2,52 @@ const cardGridElem = document.getElementById("card-grid")
 //console.log(cardGridElem);
 
 
+
+//CREATE ELEMENT
 axios
     .get("https://lanciweb.github.io/demo/api/pictures/")
     .then((resp) => {
         const cardsArray = resp.data;
-        console.log(cardsArray);
+        //console.log(cardsArray);
 
-        let cardString = "";
-        cardsArray.forEach((card) => {
-            cardString +=
+        cardsArray.forEach((currentCard) => {
+            const colElem = document.createElement("div");
+            colElem.classList.add("col")
+
+            colElem.innerHTML =
             `  
-                <div class="col">
-                    <div class="card">
-                        <img class="card-img" src="${card.url}" alt="">
-                        <h3 class="card-date">${card.date}</h3>
-                        <h2 class="card-title">${card.title}</h2>
-                    </div>
+                <div class="card">
+                    <img class="card-img" src="${currentCard.url}" alt="">
+                    <h3 class="card-date">${currentCard.date}</h3>
+                    <h2 class="card-title">${currentCard.title}</h2>
                 </div>
-            `
+            `;
+            cardGridElem.append(colElem);
         });
-        cardGridElem.innerHTML = cardString;
     })
+
+
+
+
+//TEMPLATE LITERAL
+// axios
+//     .get("https://lanciweb.github.io/demo/api/pictures/")
+//     .then((resp) => {
+//         const cardsArray = resp.data;
+//         console.log(cardsArray);
+
+//         let cardString = "";
+//         cardsArray.forEach((card) => {
+//             cardString +=
+//             `  
+//                 <div class="col">
+//                     <div class="card">
+//                         <img class="card-img" src="${card.url}" alt="">
+//                         <h3 class="card-date">${card.date}</h3>
+//                         <h2 class="card-title">${card.title}</h2>
+//                     </div>
+//                 </div>
+//             `
+//         });
+//         cardGridElem.innerHTML = cardString;
+//     })
