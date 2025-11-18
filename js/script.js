@@ -10,11 +10,26 @@ axios
         const cardsArray = resp.data;
         //console.log(cardsArray);
 
-        cardsArray.forEach((currentCard) => {
-            const colElem = document.createElement("div");
-            colElem.classList.add("col")
+        printCard(cardsArray);
+    })
 
-            colElem.innerHTML =
+
+    
+function printCard (cardsArray){
+    cardsArray.forEach((currentCard) => {
+
+        const cardElem = createCard(currentCard);
+        cardGridElem.append(cardElem);
+    });
+
+}    
+
+
+function createCard (currentCard){
+    const colElem = document.createElement("div");
+    colElem.classList.add("col");
+
+    colElem.innerHTML =
             `  
                 <div class="card">
                     <img class="card-img" src="${currentCard.url}" alt="">
@@ -22,14 +37,15 @@ axios
                     <h2 class="card-title">${currentCard.title}</h2>
                 </div>
             `;
-            cardGridElem.append(colElem);
-        });
-    })
+    return colElem;
+}
 
 
 
 
 //TEMPLATE LITERAL
+
+
 // axios
 //     .get("https://lanciweb.github.io/demo/api/pictures/")
 //     .then((resp) => {
