@@ -18,9 +18,36 @@ body{
 .container {
     width: 90%;
     background-color: aquamarine;
+    margin: 0 auto;
+}
+
+.g-20 {
+    gap: 15px;
 }
 
 header {
     height: 100px;
     background-image: url(../img/wall.png);
 }
+
+
+/* Flex */
+ .flex {
+    display: flex;
+ }
+
+ .justify-content-btw {
+    justify-content: space-between;
+ }
+
+ .align-items-center {
+    align-items: center;
+ }
+ 
+ .wrap {
+    flex-wrap: wrap;
+ }
+
+ .col {
+    background-color: bisque;
+ }
