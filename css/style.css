@@ -11,10 +11,16 @@ img {
 
 /* Typography */
 body{
-    font-family: ‘Edu Tas Beginner’, sans-serif;date: ‘Sometype Mono’, ‘monospace’;;
+    font-family: ‘Edu Tas Beginner’, sans-serif;
+    background-image: url(../img/cork.png);
 }
 
 .container {
     width: 90%;
     background-color: aquamarine;
+}
+
+header {
+    height: 100px;
+    background-image: url(../img/wall.png);
 }
