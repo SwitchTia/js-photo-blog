@@ -17,17 +17,28 @@ body{
 
 .container {
     width: 90%;
-    background-color: aquamarine;
     margin: 0 auto;
 }
 
 .g-20 {
-    gap: 15px;
+    gap: 20px;
+}
+
+.pt-200 {
+    padding-top: 200px;
 }
 
 header {
     height: 100px;
     background-image: url(../img/wall.png);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 10000;
 }
 
 
@@ -49,5 +60,18 @@ header {
  }
 
  .col {
+    width: 100%;
     background-color: bisque;
  }
+
+ main {
+    padding-top: 100 px;
+ }
+
+.card {
+    height: 100%;
+    padding: 15px;
+    border: 1px, solid, grey;
+    border-radius: 20px;
+}
+
