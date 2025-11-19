@@ -114,9 +114,14 @@ header {
     z-index: 20000;
 }
 
-.hidden {
-    display: none;
+#overlay.hidden {
+  display: none;
 }
+
+
+/* .hidden {
+    display: none; //non funziona
+} */
 
 /* The center overlay box */
 .overlay-box {
