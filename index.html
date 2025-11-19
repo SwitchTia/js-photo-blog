@@ -14,7 +14,7 @@
         integrity='sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=='
         crossorigin='anonymous'>
 
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>    
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <link rel="stylesheet" href="css/style.css" type="text/css">
     <link rel="stylesheet" href="css/responsive.css" type="text/css">
 
@@ -26,7 +26,12 @@
     </header>
     <main>
         <section class="container">
-            <div id="card-grid" class="flex justify-content-btw align-items-center wrap g-10">
+            <div id="card-grid" class="flex justify-content-btw align-items-center wrap g-10"></div>
+
+            <div class="overlay" class="hidden">
+                <div class="overlay-box">
+                    <button class="close-btn-overlay">X</button>
+                </div>
             </div>
         </section>
     </main>

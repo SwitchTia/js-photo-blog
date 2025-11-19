@@ -1,3 +1,5 @@
+*** DAY 1 ***
+
 Milestone 1
 
 Sfruttando gli screen e gli asset in allegato riproduciamo la grafica proposta in maniera statica: concentriamoci su HTML e CSS riproducendo una singola fotografia (usiamo una qualunque immagine a piacimento)
@@ -21,9 +23,9 @@ Inseriamo un foglio JavaScript ed effettuiamo una chiamata AJAX all’API, sfrut
 
 Font utilizzati:
 
-titoli:  ‘Edu Tas Beginner’, sans-serif;d
-ate: ‘Sometype Mono’, ‘monospace’;
-(Dovreste sapere a questo punto cosa e come prendere da Google Fonts… 😉)
+titoli:  ‘Edu Tas Beginner’, sans-serif;
+date: ‘Sometype Mono’, ‘monospace’;
+
 
 
 Bonus
@@ -33,4 +35,23 @@ rendi la pagina responsive, in modo che su mobile e tablet le foto si dispongano
 
 
 
-*** Objective:
+*** DAY 2 ***
+
+
+CONSEGNA
+
+Milestone 1
+
+Facciamo in modo di creare un overlay che copra l’intera pagina e all’interno, centrata, disponiamo un’immagine qualunque ed un button di chiusura.
+
+Milestone 2
+
+Facciamo sparire l’overlay con l’aiuto di una classe CSS che imposti il display: none .
+
+Dopodiché facciamo sì che cliccando una qualunque foto. L’overlay ricompaia.
+
+Cliccando invece il button di chiusura, l’overlay scompare nuovamente.
+
+Milestone 3
+
+Inseriamo il pezzo di logica finale: quando una foto viene cliccata, dobbiamo fare in modo che sia proprio quella foto a essere mostrata all’interno dell’overlay.
