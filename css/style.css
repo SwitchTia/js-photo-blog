@@ -20,8 +20,8 @@ body{
     margin: 0 auto;
 }
 
-.g-10 {
-    gap: 10px;
+.g-20 {
+    gap: 20px;
 }
 
 .pt-200 {
@@ -68,7 +68,6 @@ h1:hover {
 
  .col {
     width: 100%;
-    background-color: bisque;
  }
 
 
@@ -81,20 +80,22 @@ h1:hover {
 .card {
     height: 100%;
     padding: 15px;           
-    background-color: white;
+    background-image: url(../img/wall.png);
+    overflow: hidden;
+    border-radius: 20px;
 
     position: relative;
    
 }
 
 .card:hover {
-    transform: rotate(5deg);
+    transform: rotate(3deg);
 }
 
 .pin {
     position: absolute;
-    top: 0px;
-    left: 45%;
+    top: 3px;
+    left: 46%;
     width: 30px;
 }
 
@@ -168,8 +169,6 @@ h1:hover {
     cursor: pointer;
 }
 
-.close-overlay:hover {
-    background: black;
-}
+
 
 
