@@ -41,6 +41,13 @@ header {
     z-index: 10000;
 }
 
+h1:hover {
+    transform: scale(2);
+    letter-spacing: 2px;
+    color: #e69c42; 
+}
+
+
 
 /* Flex */
  .flex {
@@ -64,6 +71,8 @@ header {
     background-color: bisque;
  }
 
+
+ /* MAIN */
  main {
     padding-top: 100 px;
     padding-bottom: 100px;
@@ -76,6 +85,10 @@ header {
 
     position: relative;
    
+}
+
+.card:hover {
+    transform: rotate(5deg);
 }
 
 .pin {
