@@ -73,12 +73,20 @@ header {
     height: 100%;
     padding: 15px;           
     background-color: white;
+
+    position: relative;
    
+}
+
+.pin {
+    position: absolute;
+    top: 0px;
+    left: 45%;
+    width: 30px;
 }
 
 .card img {
     border-radius: 20px;
-    width: 100%;
     display: block;
 }
 

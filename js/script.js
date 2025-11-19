@@ -38,8 +38,9 @@ function createCard(currentCard) {
 
     colElem.innerHTML =
         `  
-                <div class="card">
-                    <img class="card-img" src="${currentCard.url}" alt="">
+                 <div class="card">
+                    <img class="pin" src="./img/pin.svg" alt="pin">
+                    <img class="card-img" src="${currentCard.url}" alt="Image of blog activities">
                     <h3 class="card-date">${currentCard.date}</h3>
                     <h2 class="card-title">${currentCard.title}</h2>
                 </div>
