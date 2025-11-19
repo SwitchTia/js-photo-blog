@@ -24,6 +24,7 @@ function printCard(cardsArray) {
     cardsArray.forEach((currentCard) => {
 
         const cardElem = createCard(currentCard);
+        //console.log(currentCard);
         cardGridElem.append(cardElem);
     });
 
@@ -47,7 +48,7 @@ function createCard(currentCard) {
         const title = colElem.querySelector(".card-title").textContent;
         const date = colElem.querySelector(".card-date").textContent;
 
-        // Put the card details into overlay-content (we didn't remove the close button)
+       
         const overlayContent = document.querySelector(".overlay-content");
         overlayContent.innerHTML = `
             <img src="${imgSrc}" alt="${title}" style="width:100%; border-radius:10px; margin-top:10px;">
@@ -55,7 +56,7 @@ function createCard(currentCard) {
             <h2 style="padding:10px;">${title}</h2>
         `;
 
-        // show overlay
+        
         overlayElem.classList.remove("hidden");
     });
 
@@ -67,18 +68,12 @@ function createCard(currentCard) {
 
 //overlay functions:
 
-// close button (attach once)
+
 closeBtnOverlay.addEventListener("click", function () {
     overlayElem.classList.add("hidden");
 });
 
-// optionally close when clicking outside the overlay-box (on the dark area)
-overlayElem.addEventListener("click", function (e) {
-    // if the click target is the overlay (not the box or its children), close
-    if (e.target === overlayElem) {
-        overlayElem.classList.add("hidden");
-    }
-});
+
 
 //TEMPLATE LITERAL
 
