@@ -74,6 +74,15 @@ closeBtnOverlay.addEventListener("click", function () {
 });
 
 
+// adding display none to the overlay card if any click is done around it, on background
+overlayElem.addEventListener("click", function (event) {
+    if (event.target === overlayElem) {  
+        overlayElem.classList.add("hidden");
+    }
+});
+
+
+
 
 //TEMPLATE LITERAL
 
@@ -99,5 +108,9 @@ closeBtnOverlay.addEventListener("click", function () {
 //         });
 //         cardGridElem.innerHTML = cardString;
 //     })
+
+
+
+
 
 
