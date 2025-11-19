@@ -5,10 +5,11 @@ const overlayElem = document.getElementById("overlay");
 const closeBtnOverlay = document.getElementById("close-btn-overlay");
 //console.log(closeBtnOverlay);
 const overlayContent = document.querySelector(".overlay-content");
-console.log((overlayContent));
+//console.log((overlayContent));
 
 
 //CREATE ELEMENT
+
 axios
     .get("https://lanciweb.github.io/demo/api/pictures/")
     .then((resp) => {
@@ -19,7 +20,7 @@ axios
     })
 
 
-
+//Function print card
 function printCard(cardsArray) {
     cardsArray.forEach((currentCard) => {
 
@@ -30,7 +31,7 @@ function printCard(cardsArray) {
 
 }
 
-
+//Function create card
 function createCard(currentCard) {
     const colElem = document.createElement("div");
     colElem.classList.add("col");
@@ -44,20 +45,8 @@ function createCard(currentCard) {
                 </div>
             `;
     colElem.addEventListener("click", function () {
-        const imgSrc = colElem.querySelector(".card-img").src;
-        const title = colElem.querySelector(".card-title").textContent;
-        const date = colElem.querySelector(".card-date").textContent;
-
-       
-        const overlayContent = document.querySelector(".overlay-content");
-        overlayContent.innerHTML = `
-            <img src="${imgSrc}" alt="${title}" style="width:100%; border-radius:10px; margin-top:10px;">
-            <h3 style="padding:10px; color:gray;">${date}</h3>
-            <h2 style="padding:10px;">${title}</h2>
-        `;
-
-        
-        overlayElem.classList.remove("hidden");
+        fillOverlay(colElem);
+        showOverlay();
     });
 
     return colElem;
@@ -66,15 +55,35 @@ function createCard(currentCard) {
 
 //DAY 2
 
-//overlay functions:
+//OVERLAY:
+
+//Function fill overlay with active card info
+function fillOverlay(cardElem) {
+    const imgSrc = cardElem.querySelector(".card-img").src;
+    const title = cardElem.querySelector(".card-title").textContent;
+    const date = cardElem.querySelector(".card-date").textContent;
+
+    const overlayContent = document.querySelector(".overlay-content");
+    overlayContent.innerHTML = `
+        <img src="${imgSrc}" alt="${title}" style="width:100%; border-radius:10px; margin-top:10px;">
+        <h3 style="padding:10px; color:gray;">${date}</h3>
+        <h2 style="padding:10px;">${title}</h2>
+    `;
+}
 
 
+//Function to show the overlaid card
+function showOverlay() {
+    overlayElem.classList.remove("hidden");
+}
+
+//On click the overlayed card dissapears (display-none)
 closeBtnOverlay.addEventListener("click", function () {
     overlayElem.classList.add("hidden");
 });
 
 
-// adding display none to the overlay card if any click is done around it, on background
+//Adding display none to the overlay card if any click is done around it, on background
 overlayElem.addEventListener("click", function (event) {
     if (event.target === overlayElem) {  
         overlayElem.classList.add("hidden");
