@@ -1,6 +1,9 @@
-const cardGridElem = document.getElementById("card-grid")
+const cardGridElem = document.getElementById("card-grid");
 //console.log(cardGridElem);
-
+const overlayElem = document.getElementById("overlay");
+//console.log(overlay);
+const closeOverlayBtn = document.getElementById("close-btn-overlay");
+console.log(closeOverlayBtn);
 
 
 //CREATE ELEMENT
