@@ -92,6 +92,11 @@ h1:hover {
     transform: rotate(3deg);
 }
 
+.card:hover .pin {
+    display: none;
+}
+
+
 .pin {
     position: absolute;
     top: 3px;
