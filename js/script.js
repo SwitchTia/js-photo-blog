@@ -3,7 +3,9 @@ const cardGridElem = document.getElementById("card-grid");
 const overlayElem = document.getElementById("overlay");
 //console.log(overlay);
 const closeBtnOverlay = document.getElementById("close-btn-overlay");
-console.log(closeBtnOverlay);
+//console.log(closeBtnOverlay);
+const overlayContent = document.querySelector(".overlay-content");
+console.log((overlayContent));
 
 
 //CREATE ELEMENT
@@ -40,15 +42,43 @@ function createCard(currentCard) {
                     <h2 class="card-title">${currentCard.title}</h2>
                 </div>
             `;
-    // colElem.addEventListener("click", function () {
-    //     showOverlay();
-    // });
+    colElem.addEventListener("click", function () {
+        const imgSrc = colElem.querySelector(".card-img").src;
+        const title = colElem.querySelector(".card-title").textContent;
+        const date = colElem.querySelector(".card-date").textContent;
+
+        // Put the card details into overlay-content (we didn't remove the close button)
+        const overlayContent = document.querySelector(".overlay-content");
+        overlayContent.innerHTML = `
+            <img src="${imgSrc}" alt="${title}" style="width:100%; border-radius:10px; margin-top:10px;">
+            <h3 style="padding:10px; color:gray;">${date}</h3>
+            <h2 style="padding:10px;">${title}</h2>
+        `;
+
+        // show overlay
+        overlayElem.classList.remove("hidden");
+    });
 
     return colElem;
 }
 
 
+//DAY 2
 
+//overlay functions:
+
+// close button (attach once)
+closeBtnOverlay.addEventListener("click", function () {
+    overlayElem.classList.add("hidden");
+});
+
+// optionally close when clicking outside the overlay-box (on the dark area)
+overlayElem.addEventListener("click", function (e) {
+    // if the click target is the overlay (not the box or its children), close
+    if (e.target === overlayElem) {
+        overlayElem.classList.add("hidden");
+    }
+});
 
 //TEMPLATE LITERAL
 
@@ -76,19 +106,3 @@ function createCard(currentCard) {
 //     })
 
 
-//DAY 2
-
-// overlay functions:
-
-// function showOverlay() {
-//     overlayElem.classList.remove("hidden");
-
-// }
-// function hideOverlay() {
-//     overlayElem.classList.add("hidden");
-
-// }
-
-// closeBtnOverlay.addEventListener("click", function () {
-//     hideOverlay();
-// })

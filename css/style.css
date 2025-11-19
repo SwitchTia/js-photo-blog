@@ -120,15 +120,17 @@ header {
 
 
 /* .hidden {
-    display: none; //non funziona
+    display: none; //didnt work because of specificity
 } */
 
 /* The center overlay box */
 .overlay-box {
     background: white;
     border-radius: 10px;
-    min-width: 600px;
-    min-height: 600px;
+    max-width: 600px;
+    max-height: 700px;
+    padding: 20px; 
+
     position: relative; 
 }
 
