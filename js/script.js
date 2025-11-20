@@ -14,15 +14,16 @@ let activeCard = null;
 let cardsArray = []; 
 
 
-//Getting the card data:
+// Getting the card data:
 axios.get("https://lanciweb.github.io/demo/api/pictures/")
     .then(resp => {
         cardsArray = resp.data; 
+        console.log(cardsArray);
         printCards(cardsArray);
     });
 
 
-//Function that prints all cards:
+// Function that prints all cards:
 function printCards(cardsArray) {
     cardsArray.forEach((cardData, index) => {
         const cardElem = createCard(cardData, index);
@@ -31,8 +32,8 @@ function printCards(cardsArray) {
 }
 
 
-//Function that create a single card element:
-function createCard(currentCard, index) {
+// Function that create a single card element:
+function createCard(currentCard) {
     const colElem = document.createElement("div");
     colElem.classList.add("col");
 
@@ -45,7 +46,7 @@ function createCard(currentCard, index) {
         </div>
     `;
 
-    //On click event sets this card as active and shows overlay:
+    // On click event sets this card as active and shows overlay:
     colElem.addEventListener("click", () => {
         activeCard = currentCard;      
         fillOverlay(activeCard);   
@@ -56,11 +57,11 @@ function createCard(currentCard, index) {
 }
 
 
-//DAY 2
+// DAY 2
 
-//OVERLAY:
+// OVERLAY:
 
-//Funtion that fills the overlay with the active card data:
+// Funtion that fills the overlay with the active card data:
 function fillOverlay(currentCard) {
     overlayContent.innerHTML = `
         <img class="card-img" src="${currentCard.url}" alt="Image of blog activities">
@@ -69,18 +70,18 @@ function fillOverlay(currentCard) {
     `;
 }
 
-//Function to show the overlaid card:
+// Function to show the overlaid card:
 function showOverlay() {
     overlayElem.classList.remove("hidden");
 }
 
-//On click on the X btn the overlayed card dissapears (display-none):
+// On click on the X btn the overlayed card dissapears (display-none):
 closeBtnOverlay.addEventListener("click", function () {
     overlayElem.classList.add("hidden");
 });
 
 
-//Adding display none to the overlay card if any click is done around it, on background:
+// Adding display none to the overlay card if any click is done around it, on background:
 overlayElem.addEventListener("click", function (event) {
     if (event.target === overlayElem) {  
         overlayElem.classList.add("hidden");
